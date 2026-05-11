@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Kerntaken | VISTA college</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Portfolio start">
+        <span class="brand-mark">V</span>
+        <span>
+          <strong>VISTA college</strong>
+          <small>Mijn examenportfolio</small>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Hoofdnavigatie">
+        <button class="nav-link is-active" data-view="home" type="button">Start</button>
+        <button class="nav-link" data-view="evidence" type="button">Bewijslast</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="view is-visible" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Software development</p>
+            <h1 id="home-title">Dit is mijn bewijslast.</h1>
+            <p>
+              Ik verzamel mijn portfolio per kerntaak en werkproces. Hier bewaar
+              ik documenten, screenshots, presentaties en andere bewijsstukken,
+              zodat duidelijk zichtbaar is waar mijn portfolio al gevuld is.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-action" data-view="evidence" type="button">Bewijslast uploaden</button>
+              <a class="secondary-action" href="#overview">Werkprocessen bekijken</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Portfolio voortgang">
+            <div class="metric">
+              <span id="totalFiles">0</span>
+                <small>mijn bewijsstukken opgeslagen</small>
+            </div>
+            <div class="metric-grid">
+              <div>
+                <strong id="filledProcesses">0/8</strong>
+                <small>mijn werkprocessen gevuld</small>
+              </div>
+              <div>
+                <strong>2</strong>
+                <small>kerntaken</small>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <section id="overview" class="content-band" aria-labelledby="overview-title">
+          <div class="section-heading">
+            <p class="eyebrow">Kerntaken</p>
+            <h2 id="overview-title">Mijn examenonderdelen</h2>
+          </div>
+          <div id="homeTaskGrid" class="task-grid"></div>
+        </section>
+      </section>
+
+      <section id="evidence" class="view" aria-labelledby="evidence-title">
+        <div class="workspace-head">
+          <div>
+            <p class="eyebrow">Mijn uploads</p>
+            <h1 id="evidence-title">Mijn bewijslast per werkproces</h1>
+          </div>
+          <div class="storage-note" id="storageNote">
+            <span aria-hidden="true">●</span>
+            Lokaal opgeslagen in deze browser
+          </div>
+        </div>
+
+        <div class="portfolio-shell">
+          <aside class="task-sidebar" aria-label="Kerntaak keuze">
+            <div id="taskTabs" class="task-tabs"></div>
+          </aside>
+
+          <section class="process-area">
+            <div id="taskDetail"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <template id="criterionTemplate">
+      <li class="criterion-item">
+        <span class="criterion-name"></span>
+        <span class="criterion-text"></span>
+      </li>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
