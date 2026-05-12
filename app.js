@@ -287,6 +287,17 @@ async function deleteEvidenceRecord(file) {
   await deleteEvidence(file.id);
 }
 
+async function getPreviewUrl(file) {
+  if (storageProvider === "supabase") {
+    const { data, error } = await supabaseClient.storage
+      .from(getBucketName())
+      .createSignedUrl(file.storagePath, 300);
+    if (error) throw error;
+    return data.signedUrl;
+  }
+  return URL.createObjectURL(file.blob);
+}
+
 async function openEvidenceFile(file) {
   if (storageProvider === "supabase") {
     const { data, error } = await supabaseClient.storage
@@ -511,6 +522,51 @@ function renderEvidenceList(container, files) {
     details.append(title, meta);
     actions.append(downloadButton, deleteButton);
     item.append(details, actions);
+
+    const isImage = file.fileType.startsWith("image/");
+    const isPdf = file.fileType === "application/pdf";
+
+    if (isImage || isPdf) {
+      const previewButton = document.createElement("button");
+      previewButton.className = "preview-button";
+      previewButton.type = "button";
+      previewButton.textContent = "Preview";
+      actions.prepend(previewButton);
+
+      const previewPanel = document.createElement("div");
+      previewPanel.className = "preview-panel";
+      previewPanel.hidden = true;
+      item.append(previewPanel);
+
+      let previewUrl = null;
+      previewButton.addEventListener("click", async () => {
+        const isOpen = !previewPanel.hidden;
+        previewPanel.hidden = isOpen;
+        previewButton.textContent = isOpen ? "Preview" : "Sluit";
+        if (!isOpen && !previewUrl) {
+          previewPanel.textContent = "Laden…";
+          try {
+            previewUrl = await getPreviewUrl(file);
+            previewPanel.innerHTML = "";
+            if (isImage) {
+              const img = document.createElement("img");
+              img.src = previewUrl;
+              img.className = "preview-image";
+              img.alt = file.fileName;
+              previewPanel.append(img);
+            } else {
+              const iframe = document.createElement("iframe");
+              iframe.src = previewUrl;
+              iframe.className = "preview-pdf";
+              iframe.title = file.fileName;
+              previewPanel.append(iframe);
+            }
+          } catch (err) {
+            previewPanel.textContent = "Preview niet beschikbaar.";
+          }
+        }
+      });
+    }
 
     downloadButton.addEventListener("click", async () => {
       try {
