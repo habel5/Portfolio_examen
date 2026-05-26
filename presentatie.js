@@ -95,21 +95,19 @@ const portfolioData = [
 
 const METAPHORS = {
   "B1-K1": {
-    camp: "Basiskamp 1",
-    quote: "Stoppen met afwachten en zelf de knoop doorhakken — dat was het begin."
+    quote: "Stoppen met afwachten en zelf de knoop doorhakken. Dat was het begin."
   },
   "B1-K2": {
-    camp: "Basiskamp 2",
     quote: "De samenwerking gaf me de verbinding die ik tijdens corona compleet had gemist."
   },
-  "B1-K1-W1": { step: "Stap 1",  line: "Grote problemen in stukjes hakken en stap voor stap oplossen." },
-  "B1-K1-W2": { step: "Stap 2",  line: "Een platform ontwerpen dat echt werkt voor gemeentes en onderwijsinstellingen." },
-  "B1-K1-W3": { step: "Stap 3",  line: "Volledig de verantwoordelijkheid gepakt. Dat voelde uiteindelijk als een opluchting." },
-  "B1-K1-W4": { step: "Stap 4",  line: "Na de oplevering kwamen ze met feedback — precies wat ik nodig had om beter te worden." },
-  "B1-K1-W5": { step: "Stap 5",  line: "Na de presentatie op 12 mei heb ik meteen een verbetervoorstel uitgewerkt." },
-  "B1-K2-W1": { step: "Overleg", line: "Regelmatig afstemmen, ook als het project zwaarder werd dan verwacht." },
-  "B1-K2-W2": { step: "Presenteren", line: "Niet als een to-do lijst laten zien, maar als een project dat laat zien wat ik kan." },
-  "B1-K2-W3": { step: "Reflectie",   line: "Van twijfelen of ik er mee door moest gaan, naar afronden met trots." }
+  "B1-K1-W1": { line: "Grote problemen in stukjes hakken en stap voor stap oplossen." },
+  "B1-K1-W2": { line: "Een platform ontwerpen dat echt werkt voor gemeentes en onderwijsinstellingen." },
+  "B1-K1-W3": { line: "Volledig de verantwoordelijkheid gepakt. Dat voelde uiteindelijk als een opluchting." },
+  "B1-K1-W4": { line: "Na de oplevering kwamen ze met feedback. Precies wat ik nodig had om beter te worden." },
+  "B1-K1-W5": { line: "Na de presentatie op 12 mei heb ik meteen een verbetervoorstel uitgewerkt." },
+  "B1-K2-W1": { line: "Regelmatig afstemmen, ook als het project zwaarder werd dan verwacht." },
+  "B1-K2-W2": { line: "Niet als een to-do lijst laten zien, maar als een project dat laat zien wat ik kan." },
+  "B1-K2-W3": { line: "Van twijfelen of ik er mee door moest gaan, naar afronden met trots." }
 };
 
 let slides = [];
@@ -194,7 +192,6 @@ function renderKerntaakSlide(task, taskIndex) {
 
   const content = el("div", { class: "slide-content" });
   content.innerHTML = `
-    <div class="camp-label">${meta.camp}</div>
     <span class="code-badge">${task.code}</span>
     <h2>${task.title}</h2>
     <p class="description">${task.description}</p>
@@ -206,7 +203,7 @@ function renderKerntaakSlide(task, taskIndex) {
 }
 
 function renderWerkprocesSlide(task, taskIndex, process, evidence) {
-  const meta = METAPHORS[process.code] || { step: process.code, line: "" };
+  const meta = METAPHORS[process.code] || { line: "" };
   const accentClass = taskIndex === 0 ? "accent-k1" : "accent-k2";
   const slide = el("div", { class: `slide slide-werkproces ${accentClass}` });
 
@@ -247,7 +244,6 @@ function renderWerkprocesSlide(task, taskIndex, process, evidence) {
   const content = el("div", { class: "slide-content" });
   content.innerHTML = `
     <div class="werkproces-header">
-      <span class="step-label">${meta.step}</span>
       <span class="process-code">${process.code}</span>
       <h2>${process.title}</h2>
       <span class="metaphor">${meta.line}</span>
