@@ -143,13 +143,16 @@ async function renderPdfThumb(canvas, url) {
   try {
     if (typeof pdfjsLib === "undefined") return;
     pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
-    const pdf  = await pdfjsLib.getDocument({ url, withCredentials: false }).promise;
-    const page = await pdf.getPage(1);
-    const scale    = 320 / page.getViewport({ scale: 1 }).width;
-    const viewport = page.getViewport({ scale });
-    canvas.width  = viewport.width;
-    canvas.height = viewport.height;
-    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+    const response = await fetch(url);
+    const buffer   = await response.arrayBuffer();
+    const pdf      = await pdfjsLib.getDocument({ data: buffer }).promise;
+    const page     = await pdf.getPage(1);
+    const viewport = page.getViewport({ scale: 1 });
+    const scale    = 400 / viewport.width;
+    const scaled   = page.getViewport({ scale });
+    canvas.width   = scaled.width;
+    canvas.height  = scaled.height;
+    await page.render({ canvasContext: canvas.getContext("2d"), viewport: scaled }).promise;
   } catch {
     canvas.closest(".evidence-pdf-thumb")?.classList.add("render-failed");
   }
