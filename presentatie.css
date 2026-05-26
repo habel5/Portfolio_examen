@@ -96,7 +96,7 @@ html, body {
 }
 .slide-title .slide-content { padding: 48px 32px; }
 .slide-title .eyebrow {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -117,7 +117,7 @@ html, body {
   margin-bottom: 32px;
 }
 .slide-title .metaphor {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-style: italic;
   color: var(--gold-light);
   max-width: 480px;
@@ -125,7 +125,7 @@ html, body {
   line-height: 1.6;
 }
 .slide-title .student-name {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
 }
@@ -138,7 +138,7 @@ html, body {
 }
 .slide-kerntaak .slide-content { max-width: 760px; }
 .slide-kerntaak .camp-label {
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -167,14 +167,14 @@ html, body {
   letter-spacing: -0.02em;
 }
 .slide-kerntaak .description {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
   max-width: 540px;
   line-height: 1.65;
   margin-bottom: 28px;
 }
 .metaphor-quote {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-style: italic;
   color: var(--gold-light);
   line-height: 1.65;
@@ -210,14 +210,14 @@ html, body {
 
 .werkproces-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; }
 .step-label {
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
 }
 .process-code {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 800;
   padding: 3px 10px;
   border-radius: 4px;
@@ -236,7 +236,7 @@ html, body {
 }
 .werkproces-header .metaphor {
   flex: 1 1 100%;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--gold-light);
 }
@@ -250,7 +250,7 @@ html, body {
 }
 
 .col-label {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -278,8 +278,8 @@ html, body {
   font-weight: 900;
 }
 .criterion-body { display: flex; flex-direction: column; gap: 3px; }
-.criterion-name { font-size: 0.95rem; font-weight: 700; color: var(--snow); }
-.criterion-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+.criterion-name { font-size: 1.05rem; font-weight: 700; color: var(--snow); }
+.criterion-desc { font-size: 0.97rem; color: var(--text-muted); line-height: 1.5; }
 
 /* Evidence */
 .evidence-col { overflow-y: auto; padding-right: 4px; }
@@ -313,6 +313,13 @@ html, body {
   text-decoration: none;
   transition: background 0.2s;
   cursor: pointer;
+  min-width: 0;
+}
+.evidence-file-card span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 .evidence-file-card:hover { background: rgba(255,255,255,0.1); color: var(--snow); }
 .evidence-file-icon { font-size: 1.5rem; flex-shrink: 0; }
@@ -361,10 +368,10 @@ html, body {
   border-radius: 0 8px 8px 0;
   margin-bottom: 12px;
 }
-.reflection-block strong { font-size: 1.05rem; color: var(--snow); }
+.reflection-block strong { font-size: 1.15rem; color: var(--snow); }
 .reflection-block p {
   margin-top: 8px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.7;
   font-style: italic;
