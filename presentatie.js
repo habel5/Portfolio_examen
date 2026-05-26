@@ -95,7 +95,7 @@ const portfolioData = [
 
 const METAPHORS = {
   "B1-K1": {
-    quote: "Stoppen met afwachten en zelf de knoop doorhakken. Dat was het begin."
+    quote: "Ik had genoeg van hoe het ging en besloot dat het anders moest."
   },
   "B1-K2": {
     quote: "De samenwerking gaf me de verbinding die ik tijdens corona compleet had gemist."
