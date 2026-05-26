@@ -300,6 +300,45 @@ html, body {
   display: block;
 }
 .evidence-img:hover { transform: scale(1.03); border-color: var(--gold); }
+
+.evidence-pdf-thumb {
+  position: relative;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  background: rgba(255,255,255,0.04);
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.evidence-pdf-thumb:hover { transform: scale(1.03); border-color: var(--gold); }
+.evidence-pdf-thumb canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.evidence-pdf-thumb.render-failed::before {
+  content: "📄";
+  font-size: 2.5rem;
+}
+.pdf-thumb-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 8px;
+  background: rgba(0,0,0,0.72);
+  font-size: 0.78rem;
+  color: var(--snow);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
 .evidence-file-card {
   display: flex;
   align-items: center;

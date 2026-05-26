@@ -137,6 +137,24 @@ function buildSlides(evidenceByProcess) {
   return result;
 }
 
+const PDFJS_WORKER = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+async function renderPdfThumb(canvas, url) {
+  try {
+    if (typeof pdfjsLib === "undefined") return;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+    const pdf  = await pdfjsLib.getDocument({ url, withCredentials: false }).promise;
+    const page = await pdf.getPage(1);
+    const scale    = 320 / page.getViewport({ scale: 1 }).width;
+    const viewport = page.getViewport({ scale });
+    canvas.width  = viewport.width;
+    canvas.height = viewport.height;
+    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+  } catch {
+    canvas.closest(".evidence-pdf-thumb")?.classList.add("render-failed");
+  }
+}
+
 function el(tag, attrs = {}, ...children) {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
@@ -209,9 +227,14 @@ function renderWerkprocesSlide(task, taskIndex, process, evidence) {
         if (item.file_type?.startsWith("image/")) {
           return `<img class="evidence-img" src="${item.signedUrl}" alt="${item.file_name}" loading="lazy" />`;
         }
-        const icon = item.file_type === "application/pdf" ? "📄" : "📎";
+        if (item.file_type === "application/pdf") {
+          return `<div class="evidence-pdf-thumb" data-pdf-url="${item.signedUrl}" data-pdf-name="${item.file_name}">
+            <canvas></canvas>
+            <span class="pdf-thumb-label">${item.file_name}</span>
+          </div>`;
+        }
         return `<a class="evidence-file-card" href="${item.signedUrl}" target="_blank" rel="noopener">
-          <span class="evidence-file-icon">${icon}</span>
+          <span class="evidence-file-icon">📎</span>
           <span>${item.file_name}</span>
         </a>`;
       })
@@ -240,6 +263,14 @@ function renderWerkprocesSlide(task, taskIndex, process, evidence) {
 
   content.querySelectorAll(".evidence-img").forEach((img) => {
     img.addEventListener("click", () => openLightbox(img.src, img.alt));
+  });
+
+  content.querySelectorAll(".evidence-pdf-thumb").forEach((thumb) => {
+    const url  = thumb.dataset.pdfUrl;
+    const name = thumb.dataset.pdfName;
+    renderPdfThumb(thumb.querySelector("canvas"), url);
+    thumb.addEventListener("click", () => window.open(url, "_blank", "noopener"));
+    thumb.title = name;
   });
 
   slide.append(content);
