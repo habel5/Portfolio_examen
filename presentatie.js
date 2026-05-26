@@ -96,20 +96,20 @@ const portfolioData = [
 const METAPHORS = {
   "B1-K1": {
     camp: "Basiskamp 1",
-    quote: "Het basiskamp is ingericht. De route is uitgestippeld. Tijd om te klimmen."
+    quote: "Stoppen met afwachten en zelf de knoop doorhakken — dat was het begin."
   },
   "B1-K2": {
     camp: "Basiskamp 2",
-    quote: "Samen sta je sterker op de berg. In het klimteam bereik je de top."
+    quote: "De samenwerking gaf me de verbinding die ik tijdens corona compleet had gemist."
   },
-  "B1-K1-W1": { step: "Stap 1 — De route uitzetten",   line: "Elk doel helder in kaart gebracht vóór de eerste stap omhoog." },
-  "B1-K1-W2": { step: "Stap 2 — De kaart tekenen",     line: "Het ontwerp is het kompas dat ons door de klim leidt." },
-  "B1-K1-W3": { step: "Stap 3 — De klim begint",       line: "Stap voor stap omhoog — code als handvatten in de rots." },
-  "B1-K1-W4": { step: "Stap 4 — Elk handvat testen",   line: "Vóór je gewicht erop zet, controleer je of het stevig zit." },
-  "B1-K1-W5": { step: "Stap 5 — De top in zicht",      line: "De route verbeteren voor een nog betere beklimming." },
-  "B1-K2-W1": { step: "Klimmen in het team",           line: "Communicatie is de veiligheidslijn tussen de klimmers." },
-  "B1-K2-W2": { step: "Het kamp presenteren",          line: "Laten zien hoe ver we geklommen zijn en wat we bereikten." },
-  "B1-K2-W3": { step: "De reflectie",                  line: "Op de top aangekomen — terugkijken op de beklimming." }
+  "B1-K1-W1": { step: "Stap 1",  line: "Grote problemen in stukjes hakken en stap voor stap oplossen." },
+  "B1-K1-W2": { step: "Stap 2",  line: "Een platform ontwerpen dat echt werkt voor gemeentes en onderwijsinstellingen." },
+  "B1-K1-W3": { step: "Stap 3",  line: "Volledig de verantwoordelijkheid gepakt. Dat voelde uiteindelijk als een opluchting." },
+  "B1-K1-W4": { step: "Stap 4",  line: "Na de oplevering kwamen ze met feedback — precies wat ik nodig had om beter te worden." },
+  "B1-K1-W5": { step: "Stap 5",  line: "Na de presentatie op 12 mei heb ik meteen een verbetervoorstel uitgewerkt." },
+  "B1-K2-W1": { step: "Overleg", line: "Regelmatig afstemmen, ook als het project zwaarder werd dan verwacht." },
+  "B1-K2-W2": { step: "Presenteren", line: "Niet als een to-do lijst laten zien, maar als een project dat laat zien wat ik kan." },
+  "B1-K2-W3": { step: "Reflectie",   line: "Van twijfelen of ik er mee door moest gaan, naar afronden met trots." }
 };
 
 let slides = [];
@@ -174,9 +174,9 @@ function renderTitleSlide() {
   const content = el("div", { class: "slide-content" });
   content.innerHTML = `
     <div class="eyebrow">VISTA college &nbsp;·&nbsp; Software Development MBO-4</div>
-    <h1>De Klim<br>naar de Top</h1>
+    <h1>Van onzekerheid<br>naar afronden<br>met trots.</h1>
     <div class="subtitle">Examenportfolio &nbsp;·&nbsp; B1-K1 &amp; B1-K2</div>
-    <div class="metaphor">"Elke regel code was een stap naar boven.<br>Dit is het verhaal van de beklimming."</div>
+    <div class="metaphor">"Ik had genoeg van hoe het ging<br>en besloot dat het anders moest."</div>
     <div class="student-name">Danny Habel &nbsp;·&nbsp; 2025–2026</div>
   `;
   slide.append(content);
@@ -285,15 +285,15 @@ function renderReflectieSlide() {
   const content = el("div", { class: "slide-content" });
   content.innerHTML = `
     <span class="summit-icon">🏔️</span>
-    <div class="summit-label">De top bereikt</div>
-    <h2>Reflectie op de beklimming</h2>
+    <div class="summit-label">Finish strong.</div>
+    <h2>Van onzekerheid naar afronden met trots.</h2>
     <div class="reflection-block">
-      <strong>Wat heb ik geleerd als software developer?</strong>
-      <p>[Voeg hier je reflectie in: koppel concrete momenten uit de bewijslast aan je groei als developer. Welke stap was het moeilijkst? Wat zou je een volgende keer anders aanpakken? Wat heeft je het meest verrast?]</p>
+      <strong>Wat ik meeneem</strong>
+      <p>Niet zomaar stoppen, maar ook weten wanneer je hulp moet vragen. Grote problemen in stukjes hakken. Ik kan zowel alleen als in een team werken — dat heb ik bewezen door een heel project zelfstandig te dragen.</p>
     </div>
     <div class="reflection-block">
-      <strong>De beklimming in het kort</strong>
-      <p>[Samenvatting van het traject: van het eerste basiskamp (plannen en ontwerpen) tot het samenwerken in het team. Terugkijken op de hoogtepunten en de steile stukken.]</p>
+      <strong>De weg die ik heb afgelegd</strong>
+      <p>Ik rond deze opleiding af met dalen én pieken, maar vooral met trots op de weg die ik heb afgelegd. Mijn leven is in het laatste jaar 180 graden gedraaid — en dat voelt goed.</p>
     </div>
   `;
   slide.append(content);
