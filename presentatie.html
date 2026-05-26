@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Examentpresentatie | Software Development</title>
+    <link rel="stylesheet" href="presentatie.css" />
+  </head>
+  <body>
+    <div id="loading" class="loading-overlay" aria-live="polite">
+      <span class="loading-mountain">🏔️</span>
+      <span class="loading-text">Bewijslast ophalen uit Supabase…</span>
+    </div>
+
+    <div id="deck" aria-label="Presentatie slides"></div>
+
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Vergroot beeld">
+      <img src="" alt="" />
+    </div>
+
+    <nav class="slide-nav" aria-label="Slide navigatie">
+      <button id="prevBtn" class="nav-btn" type="button" aria-label="Vorige slide">&#8592;</button>
+      <span id="slideCounter" class="slide-counter" aria-live="polite">1 / 1</span>
+      <span id="navTitle" class="nav-title"></span>
+      <button id="nextBtn" class="nav-btn" type="button" aria-label="Volgende slide">&#8594;</button>
+    </nav>
+
+    <div class="altitude-bar" aria-hidden="true">
+      <span class="altitude-summit">&#9733;</span>
+      <div class="altitude-track">
+        <div id="altitudeFill" class="altitude-fill" style="height:0%"></div>
+      </div>
+      <span class="altitude-tip">Voortgang</span>
+    </div>
+
+    <button id="fullscreenBtn" class="fullscreen-btn" type="button" aria-label="Volledig scherm">&#x26F6;</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="presentatie.js"></script>
+  </body>
+</html>
