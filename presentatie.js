@@ -110,6 +110,96 @@ const METAPHORS = {
   "B1-K2-W3": { line: "Van twijfelen of ik er mee door moest gaan, naar afronden met trots." }
 };
 
+// ── EVIDENCE VOLGORDE ──────────────────────────────────────
+// Per werkproces de gewenste bewijsvolgorde, zodat het verhaal
+// aansluit op de beoordelingscriteria (links op de slide).
+const EVIDENCE_ORDER = {
+  // W1: eerst eisen/documentatie → planning per project → bewaken voortgang
+  "B1-K1-W1": [
+    "Limburg_Univercity_Documentatie.pdf",
+    "Whiteboard_planning:overleg.jpeg",
+    "Trello:Planning_Limburg-Univercity.jpg",
+    "Trello:Planning_FashionWithAView.jpg",
+    "Planning_Verbetervoorstel_LimburgUnivercity.png"
+  ],
+  // W2: eerst ontwerp/onderbouwing → schematechnieken (ERD + use cases) → visueel ontwerp
+  "B1-K1-W2": [
+    "Limburg_Univercity_Documentatie.pdf",
+    "ERD-Diagram_Limburg-Univercity.jpg",
+    "Overzicht_Usecase_Limburg-Univercity.jpg",
+    "Admin_Usecase_Limburg-Univercity.jpg",
+    "Gemeente_Usecase_Limburg-Univercity.jpg",
+    "Onderwijs_Usecase_Limburg-Univercity.jpg",
+    "Storyboard_Design1_Limburg-Univercity.jpg",
+    "Storyboard_Design2_Limburg_Univercity.jpg",
+    "Storyboard_Design3_Limburg-Univercity.jpg",
+    "Concept:Mockup_Limburg-Univercity.jpg"
+  ],
+  // W3: eerst eindresultaat (Dashboard) → functionaliteit → codekwaliteit → versiebeheer
+  "B1-K1-W3": [
+    "Dasboard_Danny_Main_Section.jpg",
+    "Dashboard_Danny_GymSection.jpg",
+    "Dashboard_Danny_GymDay.jpg",
+    "Dashboard_Danny_Habits.jpg",
+    "Dashboard_Danny_Health_Section.jpg",
+    "Dashboard_Danny_AgendaAPI.jpg",
+    "Dashboard_Main_TaskHistory.jpg",
+    "Github_Code_Overzicht_Limburg-Univercity.jpg",
+    "Algoritme voor aaneengesloten weekstreaks.jpg",
+    "Automatische PR-detectie via geneste datastructuur.jpg",
+    "Geelde datacache met stale-while-revalidatie.jpg",
+    "Login route: hashvergelijking & sessie aanmaken.jpg",
+    "Wachtwoord hashing (SHA-256).jpg",
+    "Sessievalidatie & rolgebaseerde autorisatie.jpg",
+    "Github_Commits1_Limburg-Univercity.jpg",
+    "Github_Commits2_Limburg-Univercity.jpg",
+    "Github_Tags_Versies_Limburg-Univercity.jpg",
+    "Github_Dashboard_Deployments1.jpg",
+    "Github_Dashboard_Deployments2.jpg"
+  ],
+  // W4: testplan zit in de documentatie
+  "B1-K1-W4": [
+    "Limburg_Univercity_Documentatie.pdf"
+  ],
+  // W5: analyseren (verslag feedback) → verbetervoorstel → planning → onderbouwing
+  "B1-K1-W5": [
+    "Vervolggespreksverslag_Websiteproject.pdf",
+    "Verbetervoorstel_LimburgUnivercity.pdf",
+    "Planning_Verbetervoorstel_LimburgUnivercity.png",
+    "Limburg_Univercity_Documentatie.pdf"
+  ],
+  // K2-W1: overlegverslag toont afstemming/afspraken → documentatie als borging
+  "B1-K2-W1": [
+    "Vervolggespreksverslag_Websiteproject.pdf",
+    "Limburg_Univercity_Documentatie.pdf"
+  ],
+  // K2-W2: tijdlijn presentaties → opbouw presentatie → oplevering
+  "B1-K2-W2": [
+    "Timestamps Presentaties.pdf",
+    "Presenteren_Voorstel_indienen.jpg",
+    "Presenteren_Storyboard.jpg",
+    "Presenteren_Documentatie.jpg",
+    "Oplevering-Medtronic.jpg",
+    "Medtronic Presentatie.jpg"
+  ],
+  // K2-W3: eigen reflectie eerst, dan bredere STARR
+  "B1-K2-W3": [
+    "STARR_Reflectie_Danny_Habel.pdf",
+    "Reflectie_STARR_Software_Development.pdf"
+  ]
+};
+
+function sortEvidence(evidence, processCode) {
+  const order = EVIDENCE_ORDER[processCode];
+  if (!order) return evidence;
+  return [...evidence].sort((a, b) => {
+    const ai = order.indexOf(a.file_name);
+    const bi = order.indexOf(b.file_name);
+    // bestanden niet in de lijst komen achteraan
+    return (ai === -1 ? order.length : ai) - (bi === -1 ? order.length : bi);
+  });
+}
+
 let slides = [];
 let currentIndex = 0;
 
@@ -126,7 +216,7 @@ function buildSlides(evidenceByProcess) {
         task,
         taskIndex: ti,
         process,
-        evidence: evidenceByProcess[process.code] || []
+        evidence: sortEvidence(evidenceByProcess[process.code] || [], process.code)
       });
     });
   });
