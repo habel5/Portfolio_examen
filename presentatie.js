@@ -150,7 +150,11 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K1-W3": [
     { label: "Gerealiseerde functionaliteit",
-      files: ["Dasboard_Danny_Main_Section.jpg",
+      files: ["Limburg_Univercity.png",
+              "Limburg_Univercity_Cases.png",
+              "Limburg_Univercity_RecenteCases.png",
+              "Limburg_Univercity_Over.png",
+              "Dasboard_Danny_Main_Section.jpg",
               "Dashboard_Danny_GymSection.jpg",
               "Dashboard_Danny_GymDay.jpg",
               "Dashboard_Danny_Habits.jpg",
