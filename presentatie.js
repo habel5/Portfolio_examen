@@ -179,7 +179,14 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K1-W4": [
     { label: "Testplan & testrapport",
-      files: ["Limburg_Univercity_Documentatie.pdf"] }
+      files: ["Testplan_Overzicht_LimburgUnivercity.png",
+              "Testscenarios_deel1_LimburgUnivercity.png",
+              "Testscenarios_deel2_LimburgUnivercity.png",
+              "Testscenarios_deel3_LimburgUnivercity.png",
+              "Testlog_Intro_LimburgUnivercity.png",
+              "Testlog_Resultaten1_LimburgUnivercity.png",
+              "Testlog_Resultaten2_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K1-W5": [
     { label: "Analyseren",
