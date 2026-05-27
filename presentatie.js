@@ -516,29 +516,30 @@ document.addEventListener("keydown", (e) => {
 
 // Trackpad swipe navigatie (Mac twee vingers)
 (function () {
-  let wheelTimer = null;
-  let accX = 0;
-  let accY = 0;
+  let lastNav = 0;
+  const COOLDOWN = 800; // ms tussen twee navigaties
 
   document.addEventListener("wheel", (e) => {
     if (document.getElementById("lightbox").classList.contains("is-open")) return;
-    // Als de swipe boven de bewijskolom is, laat verticaal scrollen gewoon werken
+
     const overEvidence = e.target.closest(".evidence-col");
-    if (overEvidence) return;
 
-    accX += e.deltaX;
-    accY += e.deltaY;
+    // Verticaal scrollen in evidence-kolom: niet blokkeren
+    if (overEvidence && Math.abs(e.deltaY) > Math.abs(e.deltaX)) return;
 
-    clearTimeout(wheelTimer);
-    wheelTimer = setTimeout(() => {
-      if (Math.abs(accX) > 40 && Math.abs(accX) > Math.abs(accY)) {
-        if (accX > 0) goTo(currentIndex + 1);
-        else          goTo(currentIndex - 1);
-      }
-      accX = 0;
-      accY = 0;
-    }, 50);
-  }, { passive: true });
+    // Alleen horizontale swipes
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    if (Math.abs(e.deltaX) < 5) return;
+
+    e.preventDefault();
+
+    const now = Date.now();
+    if (now - lastNav < COOLDOWN) return;
+    lastNav = now;
+
+    if (e.deltaX > 0) goTo(currentIndex + 1);
+    else              goTo(currentIndex - 1);
+  }, { passive: false });
 })();
 
 async function init() {
