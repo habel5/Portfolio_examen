@@ -144,7 +144,12 @@ const EVIDENCE_SECTIONS = {
               "Gemeente_Usecase_Limburg-Univercity.jpg",
               "Onderwijs_Usecase_Limburg-Univercity.jpg"] },
     { label: "Onderbouwing",
-      files: ["Limburg_Univercity_Documentatie.pdf"] }
+      files: ["PvA_Doelstellingen_LimburgUnivercity.png",
+              "MoSCoW_LimburgUnivercity.png",
+              "PvE_Eisen_deel1_LimburgUnivercity.png",
+              "PvE_Eisen_deel2_LimburgUnivercity.png",
+              "PvE_Wensen_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K1-W3": [
     { label: "Gerealiseerde functionaliteit",
@@ -156,7 +161,9 @@ const EVIDENCE_SECTIONS = {
               "Dashboard_Danny_AgendaAPI.jpg",
               "Dashboard_Main_TaskHistory.jpg"] },
     { label: "Kwaliteit functionaliteiten",
-      files: ["Github_Code_Overzicht_Limburg-Univercity.jpg"] },
+      files: ["PvE_Eisen_deel1_LimburgUnivercity.png",
+              "PvE_Eisen_deel2_LimburgUnivercity.png",
+              "Github_Code_Overzicht_Limburg-Univercity.jpg"] },
     { label: "Kwaliteit code",
       files: ["Algoritme voor aaneengesloten weekstreaks.jpg",
               "Automatische PR-detectie via geneste datastructuur.jpg",
@@ -173,11 +180,16 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K1-W4": [
     { label: "Testplan & testrapport",
-      files: ["Limburg_Univercity_Documentatie.pdf"] }
+      files: ["PvE_Eisen_deel1_LimburgUnivercity.png",
+              "PvE_Eisen_deel2_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K1-W5": [
     { label: "Analyseren",
-      files: ["Vervolggespreksverslag_Websiteproject.pdf",
+      files: ["PvA_Doelstellingen_LimburgUnivercity.png",
+              "PvA_Planning_LimburgUnivercity.png",
+              "Documenthistorie_Revisies_LimburgUnivercity.png",
+              "Vervolggespreksverslag_Websiteproject.pdf",
               "Limburg_Univercity_Documentatie.pdf"] },
     { label: "Verbetervoorstellen",
       files: ["Verbetervoorstel_LimburgUnivercity.pdf"] },
@@ -188,7 +200,8 @@ const EVIDENCE_SECTIONS = {
     { label: "Afstemmen",
       files: ["Vervolggespreksverslag_Websiteproject.pdf"] },
     { label: "Afspraken vastleggen",
-      files: ["Limburg_Univercity_Documentatie.pdf"] }
+      files: ["PvA_Doelstellingen_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K2-W2": [
     { label: "Presentatie inhoud",
