@@ -494,7 +494,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Swipe navigatie
+// Swipe navigatie (touch)
 (function () {
   let startX = 0;
   let startY = 0;
@@ -508,10 +508,36 @@ document.addEventListener("keydown", (e) => {
     if (document.getElementById("lightbox").classList.contains("is-open")) return;
     const dx = e.changedTouches[0].clientX - startX;
     const dy = e.changedTouches[0].clientY - startY;
-    // Alleen horizontale swipes (horizontaal > verticaal)
     if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
-    if (dx < 0) goTo(currentIndex + 1); // swipe left → volgende
-    else        goTo(currentIndex - 1); // swipe right → vorige
+    if (dx < 0) goTo(currentIndex + 1);
+    else        goTo(currentIndex - 1);
+  }, { passive: true });
+})();
+
+// Trackpad swipe navigatie (Mac twee vingers)
+(function () {
+  let wheelTimer = null;
+  let accX = 0;
+  let accY = 0;
+
+  document.addEventListener("wheel", (e) => {
+    if (document.getElementById("lightbox").classList.contains("is-open")) return;
+    // Als de swipe boven de bewijskolom is, laat verticaal scrollen gewoon werken
+    const overEvidence = e.target.closest(".evidence-col");
+    if (overEvidence) return;
+
+    accX += e.deltaX;
+    accY += e.deltaY;
+
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(() => {
+      if (Math.abs(accX) > 40 && Math.abs(accX) > Math.abs(accY)) {
+        if (accX > 0) goTo(currentIndex + 1);
+        else          goTo(currentIndex - 1);
+      }
+      accX = 0;
+      accY = 0;
+    }, 50);
   }, { passive: true });
 })();
 
