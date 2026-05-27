@@ -110,94 +110,134 @@ const METAPHORS = {
   "B1-K2-W3": { line: "Van twijfelen of ik er mee door moest gaan, naar afronden met trots." }
 };
 
-// ── EVIDENCE VOLGORDE ──────────────────────────────────────
-// Per werkproces de gewenste bewijsvolgorde, zodat het verhaal
-// aansluit op de beoordelingscriteria (links op de slide).
-const EVIDENCE_ORDER = {
-  // W1: eerst eisen/documentatie → planning per project → bewaken voortgang
+// ── EVIDENCE SUBSECTIES ────────────────────────────────────
+// Per werkproces koppelt elk criterium aan specifieke bestanden,
+// zodat de bewijslastkolom een gestructureerd verhaal toont.
+const EVIDENCE_SECTIONS = {
   "B1-K1-W1": [
-    "Limburg_Univercity_Documentatie.pdf",
-    "Whiteboard_planning:overleg.jpeg",
-    "Trello:Planning_Limburg-Univercity.jpg",
-    "Trello:Planning_FashionWithAView.jpg",
-    "Planning_Verbetervoorstel_LimburgUnivercity.png"
+    { label: "Eisen/wensen",
+      files: ["Limburg_Univercity_Documentatie.pdf"] },
+    { label: "Planning",
+      files: ["Whiteboard_planning:overleg.jpeg",
+              "Trello:Planning_Limburg-Univercity.jpg",
+              "Trello:Planning_FashionWithAView.jpg"] },
+    { label: "Bewaken voortgang",
+      files: ["Planning_Verbetervoorstel_LimburgUnivercity.png"] }
   ],
-  // W2: eerst ontwerp/onderbouwing → schematechnieken (ERD + use cases) → visueel ontwerp
   "B1-K1-W2": [
-    "Limburg_Univercity_Documentatie.pdf",
-    "ERD-Diagram_Limburg-Univercity.jpg",
-    "Overzicht_Usecase_Limburg-Univercity.jpg",
-    "Admin_Usecase_Limburg-Univercity.jpg",
-    "Gemeente_Usecase_Limburg-Univercity.jpg",
-    "Onderwijs_Usecase_Limburg-Univercity.jpg",
-    "Storyboard_Design1_Limburg-Univercity.jpg",
-    "Storyboard_Design2_Limburg_Univercity.jpg",
-    "Storyboard_Design3_Limburg-Univercity.jpg",
-    "Concept:Mockup_Limburg-Univercity.jpg"
+    { label: "Ontwerp",
+      files: ["ERD-Diagram_Limburg-Univercity.jpg",
+              "Storyboard_Design1_Limburg-Univercity.jpg",
+              "Storyboard_Design2_Limburg_Univercity.jpg",
+              "Storyboard_Design3_Limburg-Univercity.jpg",
+              "Concept:Mockup_Limburg-Univercity.jpg"] },
+    { label: "Schematechnieken",
+      files: ["Overzicht_Usecase_Limburg-Univercity.jpg",
+              "Admin_Usecase_Limburg-Univercity.jpg",
+              "Gemeente_Usecase_Limburg-Univercity.jpg",
+              "Onderwijs_Usecase_Limburg-Univercity.jpg"] },
+    { label: "Onderbouwing",
+      files: ["Limburg_Univercity_Documentatie.pdf"] }
   ],
-  // W3: eerst eindresultaat (Dashboard) → functionaliteit → codekwaliteit → versiebeheer
   "B1-K1-W3": [
-    "Dasboard_Danny_Main_Section.jpg",
-    "Dashboard_Danny_GymSection.jpg",
-    "Dashboard_Danny_GymDay.jpg",
-    "Dashboard_Danny_Habits.jpg",
-    "Dashboard_Danny_Health_Section.jpg",
-    "Dashboard_Danny_AgendaAPI.jpg",
-    "Dashboard_Main_TaskHistory.jpg",
-    "Github_Code_Overzicht_Limburg-Univercity.jpg",
-    "Algoritme voor aaneengesloten weekstreaks.jpg",
-    "Automatische PR-detectie via geneste datastructuur.jpg",
-    "Geelde datacache met stale-while-revalidatie.jpg",
-    "Login route: hashvergelijking & sessie aanmaken.jpg",
-    "Wachtwoord hashing (SHA-256).jpg",
-    "Sessievalidatie & rolgebaseerde autorisatie.jpg",
-    "Github_Commits1_Limburg-Univercity.jpg",
-    "Github_Commits2_Limburg-Univercity.jpg",
-    "Github_Tags_Versies_Limburg-Univercity.jpg",
-    "Github_Dashboard_Deployments1.jpg",
-    "Github_Dashboard_Deployments2.jpg"
+    { label: "Gerealiseerde functionaliteit",
+      files: ["Dasboard_Danny_Main_Section.jpg",
+              "Dashboard_Danny_GymSection.jpg",
+              "Dashboard_Danny_GymDay.jpg",
+              "Dashboard_Danny_Habits.jpg",
+              "Dashboard_Danny_Health_Section.jpg",
+              "Dashboard_Danny_AgendaAPI.jpg",
+              "Dashboard_Main_TaskHistory.jpg"] },
+    { label: "Kwaliteit functionaliteiten",
+      files: ["Github_Code_Overzicht_Limburg-Univercity.jpg"] },
+    { label: "Kwaliteit code",
+      files: ["Algoritme voor aaneengesloten weekstreaks.jpg",
+              "Automatische PR-detectie via geneste datastructuur.jpg",
+              "Geelde datacache met stale-while-revalidatie.jpg",
+              "Login route: hashvergelijking & sessie aanmaken.jpg",
+              "Wachtwoord hashing (SHA-256).jpg",
+              "Sessievalidatie & rolgebaseerde autorisatie.jpg"] },
+    { label: "Versiebeheer",
+      files: ["Github_Commits1_Limburg-Univercity.jpg",
+              "Github_Commits2_Limburg-Univercity.jpg",
+              "Github_Tags_Versies_Limburg-Univercity.jpg",
+              "Github_Dashboard_Deployments1.jpg",
+              "Github_Dashboard_Deployments2.jpg"] }
   ],
-  // W4: testplan zit in de documentatie
   "B1-K1-W4": [
-    "Limburg_Univercity_Documentatie.pdf"
+    { label: "Testplan & testrapport",
+      files: ["Limburg_Univercity_Documentatie.pdf"] }
   ],
-  // W5: analyseren (verslag feedback) → verbetervoorstel → planning → onderbouwing
   "B1-K1-W5": [
-    "Vervolggespreksverslag_Websiteproject.pdf",
-    "Verbetervoorstel_LimburgUnivercity.pdf",
-    "Planning_Verbetervoorstel_LimburgUnivercity.png",
-    "Limburg_Univercity_Documentatie.pdf"
+    { label: "Analyseren",
+      files: ["Vervolggespreksverslag_Websiteproject.pdf",
+              "Limburg_Univercity_Documentatie.pdf"] },
+    { label: "Verbetervoorstellen",
+      files: ["Verbetervoorstel_LimburgUnivercity.pdf"] },
+    { label: "Planning",
+      files: ["Planning_Verbetervoorstel_LimburgUnivercity.png"] }
   ],
-  // K2-W1: overlegverslag toont afstemming/afspraken → documentatie als borging
   "B1-K2-W1": [
-    "Vervolggespreksverslag_Websiteproject.pdf",
-    "Limburg_Univercity_Documentatie.pdf"
+    { label: "Afstemmen",
+      files: ["Vervolggespreksverslag_Websiteproject.pdf"] },
+    { label: "Afspraken vastleggen",
+      files: ["Limburg_Univercity_Documentatie.pdf"] }
   ],
-  // K2-W2: tijdlijn presentaties → opbouw presentatie → oplevering
   "B1-K2-W2": [
-    "Timestamps Presentaties.pdf",
-    "Presenteren_Voorstel_indienen.jpg",
-    "Presenteren_Storyboard.jpg",
-    "Presenteren_Documentatie.jpg",
-    "Oplevering-Medtronic.jpg",
-    "Medtronic Presentatie.jpg"
+    { label: "Presentatie inhoud",
+      files: ["Timestamps Presentaties.pdf",
+              "Presenteren_Voorstel_indienen.jpg",
+              "Presenteren_Storyboard.jpg",
+              "Presenteren_Documentatie.jpg"] },
+    { label: "Presentatietechnieken",
+      files: ["Oplevering-Medtronic.jpg",
+              "Medtronic Presentatie.jpg"] }
   ],
-  // K2-W3: eigen reflectie eerst, dan bredere STARR
   "B1-K2-W3": [
-    "STARR_Reflectie_Danny_Habel.pdf",
-    "Reflectie_STARR_Software_Development.pdf"
+    { label: "Feedbackproces",
+      files: ["STARR_Reflectie_Danny_Habel.pdf"] },
+    { label: "Reactie op feedback",
+      files: ["Reflectie_STARR_Software_Development.pdf"] }
   ]
 };
 
-function sortEvidence(evidence, processCode) {
-  const order = EVIDENCE_ORDER[processCode];
-  if (!order) return evidence;
-  return [...evidence].sort((a, b) => {
-    const ai = order.indexOf(a.file_name);
-    const bi = order.indexOf(b.file_name);
-    // bestanden niet in de lijst komen achteraan
-    return (ai === -1 ? order.length : ai) - (bi === -1 ? order.length : bi);
-  });
+// Groepeer bewijs op basis van EVIDENCE_SECTIONS.
+// Geeft array van { label, items } terug, of null als er geen definitie is.
+function buildEvidenceSections(evidence, processCode) {
+  const defs = EVIDENCE_SECTIONS[processCode];
+  if (!defs || !evidence.length) return null;
+
+  const fileMap = new Map(evidence.map(e => [e.file_name, e]));
+  const used    = new Set();
+  const sections = [];
+
+  for (const { label, files } of defs) {
+    const items = files.map(f => fileMap.get(f)).filter(Boolean);
+    items.forEach(i => used.add(i.file_name));
+    if (items.length) sections.push({ label, items });
+  }
+
+  // bestanden zonder sectiedefinitie komen achteraan als "Overig"
+  const leftover = evidence.filter(e => !used.has(e.file_name));
+  if (leftover.length) sections.push({ label: "Overig", items: leftover });
+
+  return sections.length ? sections : null;
+}
+
+function renderEvidenceItem(item) {
+  if (item.file_type?.startsWith("image/")) {
+    return `<img class="evidence-img" src="${item.signedUrl}" alt="${item.file_name}" loading="lazy" />`;
+  }
+  if (item.file_type === "application/pdf") {
+    return `<div class="evidence-pdf-thumb" data-pdf-url="${item.signedUrl}" data-pdf-name="${item.file_name}">
+      <canvas></canvas>
+      <span class="pdf-thumb-label">${item.file_name}</span>
+    </div>`;
+  }
+  return `<a class="evidence-file-card" href="${item.signedUrl}" target="_blank" rel="noopener">
+    <span class="evidence-file-icon">📎</span>
+    <span>${item.file_name}</span>
+  </a>`;
 }
 
 let slides = [];
@@ -216,7 +256,7 @@ function buildSlides(evidenceByProcess) {
         task,
         taskIndex: ti,
         process,
-        evidence: sortEvidence(evidenceByProcess[process.code] || [], process.code)
+        evidence: evidenceByProcess[process.code] || []
       });
     });
   });
@@ -308,27 +348,23 @@ function renderWerkprocesSlide(task, taskIndex, process, evidence) {
       </li>`)
     .join("");
 
-  let evidenceItems = "";
-  if (evidence.length === 0) {
-    evidenceItems = `<div class="evidence-empty">Nog geen bewijsstukken geüpload voor dit werkproces.</div>`;
+  // Bouw gesectionneerde of platte bewijskolom
+  let evidenceColInner = "";
+  if (!evidence.length) {
+    evidenceColInner = `<div class="evidence-empty">Nog geen bewijsstukken geüpload voor dit werkproces.</div>`;
   } else {
-    evidenceItems = evidence
-      .map((item) => {
-        if (item.file_type?.startsWith("image/")) {
-          return `<img class="evidence-img" src="${item.signedUrl}" alt="${item.file_name}" loading="lazy" />`;
-        }
-        if (item.file_type === "application/pdf") {
-          return `<div class="evidence-pdf-thumb" data-pdf-url="${item.signedUrl}" data-pdf-name="${item.file_name}">
-            <canvas></canvas>
-            <span class="pdf-thumb-label">${item.file_name}</span>
-          </div>`;
-        }
-        return `<a class="evidence-file-card" href="${item.signedUrl}" target="_blank" rel="noopener">
-          <span class="evidence-file-icon">📎</span>
-          <span>${item.file_name}</span>
-        </a>`;
-      })
-      .join("");
+    const sections = buildEvidenceSections(evidence, process.code);
+    if (sections) {
+      evidenceColInner = `<div class="evidence-sections">${
+        sections.map(({ label, items }) => `
+          <div class="evidence-section">
+            <div class="evidence-section-label">${label}</div>
+            <div class="evidence-grid">${items.map(renderEvidenceItem).join("")}</div>
+          </div>`).join("")
+      }</div>`;
+    } else {
+      evidenceColInner = `<div class="evidence-grid">${evidence.map(renderEvidenceItem).join("")}</div>`;
+    }
   }
 
   const content = el("div", { class: "slide-content" });
@@ -345,7 +381,7 @@ function renderWerkprocesSlide(task, taskIndex, process, evidence) {
       </div>
       <div class="evidence-col">
         <div class="col-label">Mijn bewijslast</div>
-        <div class="evidence-grid">${evidenceItems}</div>
+        ${evidenceColInner}
       </div>
     </div>
   `;
