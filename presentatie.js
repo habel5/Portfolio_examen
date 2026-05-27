@@ -144,7 +144,9 @@ const EVIDENCE_SECTIONS = {
               "Gemeente_Usecase_Limburg-Univercity.jpg",
               "Onderwijs_Usecase_Limburg-Univercity.jpg"] },
     { label: "Onderbouwing",
-      files: ["Limburg_Univercity_Documentatie.pdf"] }
+      files: ["TO_TechnischeSpecificaties_LimburgUnivercity.png",
+              "Onderbouwing_Beveiliging_SHA256_Supabase_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K1-W3": [
     { label: "Gerealiseerde functionaliteit",
