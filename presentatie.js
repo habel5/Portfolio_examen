@@ -116,13 +116,20 @@ const METAPHORS = {
 const EVIDENCE_SECTIONS = {
   "B1-K1-W1": [
     { label: "Eisen/wensen",
-      files: ["Limburg_Univercity_Documentatie.pdf"] },
+      files: ["PvA_Doelstellingen_LimburgUnivercity.png",
+              "MoSCoW_LimburgUnivercity.png",
+              "PvE_Eisen_deel1_LimburgUnivercity.png",
+              "PvE_Eisen_deel2_LimburgUnivercity.png",
+              "PvE_Wensen_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] },
     { label: "Planning",
-      files: ["Whiteboard_planning:overleg.jpeg",
+      files: ["PvA_Planning_LimburgUnivercity.png",
+              "Whiteboard_planning:overleg.jpeg",
               "Trello:Planning_Limburg-Univercity.jpg",
               "Trello:Planning_FashionWithAView.jpg"] },
     { label: "Bewaken voortgang",
-      files: ["Planning_Verbetervoorstel_LimburgUnivercity.png"] }
+      files: ["Documenthistorie_Revisies_LimburgUnivercity.png",
+              "Planning_Verbetervoorstel_LimburgUnivercity.png"] }
   ],
   "B1-K1-W2": [
     { label: "Ontwerp",
