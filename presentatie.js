@@ -494,25 +494,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Scroll navigatie (trackpad & muis)
-(function () {
-  let lastNav = 0;
-  const COOLDOWN = 600;
-
-  document.addEventListener("wheel", (e) => {
-    if (document.getElementById("lightbox").classList.contains("is-open")) return;
-    // In de bewijskolom: gewoon scrollen
-    if (e.target.closest(".evidence-col")) return;
-
-    const now = Date.now();
-    if (now - lastNav < COOLDOWN) return;
-    lastNav = now;
-
-    if (e.deltaY > 0) goTo(currentIndex + 1);
-    else if (e.deltaY < 0) goTo(currentIndex - 1);
-  }, { passive: true });
-})();
-
 // Swipe navigatie (touch – telefoon/tablet)
 (function () {
   let startX = 0;
