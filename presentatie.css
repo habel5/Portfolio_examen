@@ -1,17 +1,22 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --sky-deep:      #0a1628;
-  --sky-mid:       #0f2040;
-  --mountain-far:  #1a2d45;
-  --mountain-near: #0f1e30;
-  --snow:          #e8f4fc;
-  --gold:          #f59e0b;
-  --gold-light:    #fcd34d;
-  --text:          #e2e8f0;
-  --text-muted:    #94a3b8;
-  --k1:            #3b82f6;
-  --k2:            #8b5cf6;
+  --sky-deep:      #041719;
+  --sky-mid:       #072225;
+  --mountain-far:  #0a3035;
+  --mountain-near: #072428;
+  --snow:          #e8f8f9;
+  --gold:          #ec644a;
+  --gold-light:    #f4896e;
+  --text:          #dff0f2;
+  --text-muted:    #7fb8be;
+  --k1:            #00555c;
+  --k2:            #00afea;
+
+  /* VISTA brand */
+  --vista-petrol:  #00555c;
+  --vista-coral:   #ec644a;
+  --vista-focus:   #00afea;
 }
 
 html, body {
@@ -92,7 +97,7 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(155deg, #0a1628 0%, #0e1f3c 55%, #1a0a2a 100%);
+  background: linear-gradient(155deg, #041719 0%, #072e33 55%, #0a1a0e 100%);
 }
 .slide-title .slide-content { padding: 48px 32px; }
 .slide-title .eyebrow {
@@ -155,8 +160,8 @@ html, body {
   border-radius: 4px;
   margin-bottom: 14px;
 }
-.accent-k1 .code-badge { background: rgba(59,130,246,0.18); color: #93c5fd; }
-.accent-k2 .code-badge { background: rgba(139,92,246,0.18); color: #c4b5fd; }
+.accent-k1 .code-badge { background: rgba(0,85,92,0.35); color: #7fd4da; }
+.accent-k2 .code-badge { background: rgba(0,175,234,0.2); color: #7dd8f8; }
 
 .slide-kerntaak h2 {
   font-size: clamp(2rem, 5vw, 3.8rem);
@@ -224,8 +229,8 @@ html, body {
   background: rgba(255,255,255,0.09);
   color: var(--text-muted);
 }
-.accent-k1 .process-code { background: rgba(59,130,246,0.15); color: #93c5fd; }
-.accent-k2 .process-code { background: rgba(139,92,246,0.15); color: #c4b5fd; }
+.accent-k1 .process-code { background: rgba(0,85,92,0.3); color: #7fd4da; }
+.accent-k2 .process-code { background: rgba(0,175,234,0.2); color: #7dd8f8; }
 
 .werkproces-header h2 {
   flex: 1 1 100%;
@@ -382,10 +387,10 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(155deg, #0a1628 0%, #1a1f30 45%, #1a0e04 100%);
+  background: linear-gradient(155deg, #041719 0%, #072e33 45%, #0d2010 100%);
 }
-.slide-reflectie::before { background: #1f2e18; opacity: 0.6; }
-.slide-reflectie::after  { background: #0f1a0a; }
+.slide-reflectie::before { background: #0a3035; opacity: 0.7; }
+.slide-reflectie::after  { background: #072428; }
 .slide-reflectie .slide-content { padding: 40px 32px; max-width: 720px; }
 .summit-icon { font-size: 2.8rem; display: block; margin-bottom: 10px; }
 .summit-label {
