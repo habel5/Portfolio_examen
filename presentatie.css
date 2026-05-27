@@ -219,9 +219,9 @@ html, body {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 10px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(0,85,92,0.4);
-  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0,175,234,0.3);
+  margin-bottom: 4px;
 }
 .process-code {
   font-size: 0.85rem;
@@ -251,10 +251,11 @@ html, body {
 /* Body: criteria left, evidence right */
 .werkproces-body {
   display: grid;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: 0;
   min-height: 0;
   overflow: hidden;
+  padding-top: 4px;
 }
 
 .col-label {
@@ -270,8 +271,8 @@ html, body {
 /* Criteria */
 .criteria-col {
   overflow-y: auto;
-  padding: 18px 20px 18px 0;
-  border-right: 1px solid rgba(0,85,92,0.35);
+  padding: 20px 24px 20px 0;
+  border-right: 1px solid rgba(0,175,234,0.15);
 }
 .criteria-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 .criterion { display: flex; gap: 10px; align-items: flex-start; }
@@ -295,7 +296,7 @@ html, body {
 .criterion-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
 /* Evidence */
-.evidence-col { overflow-y: auto; padding-right: 4px; }
+.evidence-col { overflow-y: auto; padding: 18px 4px 18px 20px; }
 .evidence-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
