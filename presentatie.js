@@ -494,6 +494,27 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// Swipe navigatie
+(function () {
+  let startX = 0;
+  let startY = 0;
+
+  document.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener("touchend", (e) => {
+    if (document.getElementById("lightbox").classList.contains("is-open")) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    // Alleen horizontale swipes (horizontaal > verticaal)
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+    if (dx < 0) goTo(currentIndex + 1); // swipe left → volgende
+    else        goTo(currentIndex - 1); // swipe right → vorige
+  }, { passive: true });
+})();
+
 async function init() {
   let evidenceByProcess = {};
 
