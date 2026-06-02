@@ -199,7 +199,7 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K1-W5": [
     { label: "Analyseren",
-      files: ["Vervolggespreksverslag_Websiteproject.pdf",
+      files: ["Afstemmen_Meeting-Report_LimburgUnivercity.pdf",
               "Limburg_Univercity_Documentatie.pdf"] },
     { label: "Verbetervoorstellen",
       files: ["Verbetervoorstel_LimburgUnivercity.pdf"] },
