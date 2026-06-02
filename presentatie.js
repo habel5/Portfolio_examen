@@ -245,7 +245,9 @@ const EVIDENCE_SECTIONS = {
               "Presenteren_Documentatie.jpg"] },
     { label: "Presentatietechnieken",
       files: ["Oplevering-Medtronic.jpg",
-              "Medtronic Presentatie.jpg"] }
+              "Medtronic Presentatie.jpg"] },
+    { label: "Beantwoorden vragen",
+      files: ["Timestamps Presentaties.pdf"] }
   ],
   "B1-K2-W3": [
     { label: "Feedbackproces",
