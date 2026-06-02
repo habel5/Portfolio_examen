@@ -249,9 +249,11 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K2-W3": [
     { label: "Feedbackproces",
-      files: ["STARR_Reflectie_Danny_Habel.pdf"] },
+      files: ["STARR_Reflectie_Danny_Habel.pdf",
+              "Reflectie_STARR_Software_Development.pdf"] },
     { label: "Reactie op feedback",
-      files: ["Reflectie_STARR_Software_Development.pdf"] }
+      files: ["Feedback_Marc_Huntjens_Reflectie_LimburgUnivercity.pdf",
+              "STARR_Reflectie_Danny_Habel.pdf"] }
   ]
 };
 
