@@ -128,7 +128,8 @@ const EVIDENCE_SECTIONS = {
               "Trello:Planning_Limburg-Univercity.jpg",
               "Trello:Planning_FashionWithAView.jpg"] },
     { label: "Bewaken voortgang",
-      files: ["Afstemmen_Standup-CDKM-Overleg_LimburgUnivercity.png",
+      files: ["Trello_Done_Kolom_LimburgUnivercity.png",
+              "Afstemmen_Standup-CDKM-Overleg_LimburgUnivercity.png",
               "Documenthistorie_Revisies_LimburgUnivercity.png",
               "Planning_Verbetervoorstel_LimburgUnivercity.png"] }
   ],
