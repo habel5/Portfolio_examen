@@ -187,13 +187,19 @@ const EVIDENCE_SECTIONS = {
               "Github_Dashboard_Deployments2.jpg"] }
   ],
   "B1-K1-W4": [
-    { label: "Testplan & testrapport",
+    { label: "Testplan",
       files: ["Testplan_Overzicht_LimburgUnivercity.png",
-              "Testscenarios_deel1_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] },
+    { label: "Testscenario",
+      files: ["Testscenarios_deel1_LimburgUnivercity.png",
               "Testscenarios_deel2_LimburgUnivercity.png",
-              "Testscenarios_deel3_LimburgUnivercity.png",
-              "Testlog_Intro_LimburgUnivercity.png",
+              "Testscenarios_deel3_LimburgUnivercity.png"] },
+    { label: "Testen",
+      files: ["Testlog_Intro_LimburgUnivercity.png",
               "Testlog_Resultaten1_LimburgUnivercity.png",
+              "Testlog_Resultaten2_LimburgUnivercity.png"] },
+    { label: "Testrapport",
+      files: ["Testlog_Resultaten1_LimburgUnivercity.png",
               "Testlog_Resultaten2_LimburgUnivercity.png",
               "Limburg_Univercity_Documentatie.pdf"] }
   ],
