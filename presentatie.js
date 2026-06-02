@@ -207,13 +207,19 @@ const EVIDENCE_SECTIONS = {
       files: ["Planning_Verbetervoorstel_LimburgUnivercity.png"] }
   ],
   "B1-K2-W1": [
+    { label: "Actieve deelname",
+      files: ["Afstemmen_Email-Danny-to-Gabrielle_LimburgUnivercity.png",
+              "Afstemmen_Email-Gabrielle-Response_LimburgUnivercity.png",
+              "Afstemmen_Meeting-Report_LimburgUnivercity.pdf"] },
     { label: "Afstemmen",
       files: ["Afstemmen_Whiteboard-Standup-Daily_LimburgUnivercity.jpg",
               "Afstemmen_Trello-Board-Planning_LimburgUnivercity.png",
-              "Afstemmen_Email-Danny-to-Gabrielle_LimburgUnivercity.png",
-              "Afstemmen_Email-Gabrielle-Response_LimburgUnivercity.png",
               "Afstemmen_Meeting-Report_LimburgUnivercity.pdf"] },
     { label: "Afspraken vastleggen",
+      files: ["Afstemmen_Trello-Board-Planning_LimburgUnivercity.png",
+              "Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] },
+    { label: "Afspraken nakomen",
       files: ["Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
               "Limburg_Univercity_Documentatie.pdf"] }
   ],
