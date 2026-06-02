@@ -236,7 +236,10 @@ const EVIDENCE_SECTIONS = {
               "Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
               "Limburg_Univercity_Documentatie.pdf"] },
     { label: "Afspraken nakomen",
-      files: ["Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
+      files: ["Trello_Done_Kolom_LimburgUnivercity.png",
+              "Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
+              "Distributie_Feedback_Winckers_LimburgUnivercity.png",
+              "Verbetervoorstel_LimburgUnivercity.pdf",
               "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K2-W2": [
