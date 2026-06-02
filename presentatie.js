@@ -208,7 +208,9 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K2-W1": [
     { label: "Afstemmen",
-      files: ["Vervolggespreksverslag_Websiteproject.pdf"] },
+      files: ["Afstemmen_Email-Danny-to-Gabrielle_LimburgUnivercity.png",
+              "Afstemmen_Email-Gabrielle-Response_LimburgUnivercity.png",
+              "Afstemmen_Meeting-Report_LimburgUnivercity.pdf"] },
     { label: "Afspraken vastleggen",
       files: ["Limburg_Univercity_Documentatie.pdf"] }
   ],
