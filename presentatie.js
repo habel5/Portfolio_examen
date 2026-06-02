@@ -252,7 +252,8 @@ const EVIDENCE_SECTIONS = {
       files: ["STARR_Reflectie_Danny_Habel.pdf",
               "Reflectie_STARR_Software_Development.pdf"] },
     { label: "Reactie op feedback",
-      files: ["Feedback_Marc_Huntjens_Reflectie_LimburgUnivercity.pdf",
+      files: ["Feedback_Marc_Huntjens_Pagina1_LimburgUnivercity.png",
+              "Feedback_Marc_Huntjens_Pagina2_LimburgUnivercity.png",
               "STARR_Reflectie_Danny_Habel.pdf"] }
   ]
 };
