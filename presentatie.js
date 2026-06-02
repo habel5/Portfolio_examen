@@ -214,7 +214,8 @@ const EVIDENCE_SECTIONS = {
               "Afstemmen_Email-Gabrielle-Response_LimburgUnivercity.png",
               "Afstemmen_Meeting-Report_LimburgUnivercity.pdf"] },
     { label: "Afspraken vastleggen",
-      files: ["Limburg_Univercity_Documentatie.pdf"] }
+      files: ["Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
+              "Limburg_Univercity_Documentatie.pdf"] }
   ],
   "B1-K2-W2": [
     { label: "Presentatie inhoud",
