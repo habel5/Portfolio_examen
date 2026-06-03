@@ -219,7 +219,6 @@ const EVIDENCE_SECTIONS = {
               "Testscenarios_deel1_LimburgUnivercity.png",
               "Testscenarios_deel2_LimburgUnivercity.png",
               "Testscenarios_deel3_LimburgUnivercity.png",
-              "Afstemmen_Meeting-Report_LimburgUnivercity.pdf",
               "Limburg_Univercity_Documentatie.pdf"] },
     { label: "Verbetervoorstellen",
       files: ["Verbetervoorstellen_Deel1_LimburgUnivercity.png",
