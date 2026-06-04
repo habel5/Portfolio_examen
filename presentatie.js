@@ -120,8 +120,7 @@ const EVIDENCE_SECTIONS = {
               "MoSCoW_LimburgUnivercity.png",
               "PvE_Eisen_deel1_LimburgUnivercity.png",
               "PvE_Eisen_deel2_LimburgUnivercity.png",
-              "PvE_Wensen_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] },
+              "PvE_Wensen_LimburgUnivercity.png"] },
     { label: "Planning",
       files: ["PvA_Planning_LimburgUnivercity.png",
               "PRD_SprintPlanning_deel1_LimburgUnivercity.png",
@@ -155,8 +154,7 @@ const EVIDENCE_SECTIONS = {
     { label: "Onderbouwing",
       files: ["TO_ActivityDiagram_ClassDiagram_LimburgUnivercity.png",
               "TO_TechnischeSpecificaties_LimburgUnivercity.png",
-              "Onderbouwing_Beveiliging_SHA256_Supabase_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] }
+              "Onderbouwing_Beveiliging_SHA256_Supabase_LimburgUnivercity.png"] }
   ],
   "B1-K1-W3": [
     { label: "Gerealiseerde functionaliteit",
@@ -198,8 +196,7 @@ const EVIDENCE_SECTIONS = {
   ],
   "B1-K1-W4": [
     { label: "Testplan",
-      files: ["Testplan_Overzicht_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] },
+      files: ["Testplan_Overzicht_LimburgUnivercity.png"] },
     { label: "Testscenario",
       files: ["Testscenarios_deel1_LimburgUnivercity.png",
               "Testscenarios_deel2_LimburgUnivercity.png",
@@ -210,16 +207,14 @@ const EVIDENCE_SECTIONS = {
               "Testlog_Resultaten2_LimburgUnivercity.png"] },
     { label: "Testrapport",
       files: ["Testlog_Resultaten1_LimburgUnivercity.png",
-              "Testlog_Resultaten2_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] }
+              "Testlog_Resultaten2_LimburgUnivercity.png"] }
   ],
   "B1-K1-W5": [
     { label: "Analyseren",
       files: ["Documenthistorie_Revisies_LimburgUnivercity.png",
               "Testscenarios_deel1_LimburgUnivercity.png",
               "Testscenarios_deel2_LimburgUnivercity.png",
-              "Testscenarios_deel3_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] },
+              "Testscenarios_deel3_LimburgUnivercity.png"] },
     { label: "Verbetervoorstellen",
       files: ["Verbetervoorstellen_Deel1_LimburgUnivercity.png",
               "Verbetervoorstellen_Deel2_LimburgUnivercity.png",
@@ -244,16 +239,14 @@ const EVIDENCE_SECTIONS = {
               "MeetingReport_Pagina1_LimburgUnivercity.png"] },
     { label: "Afspraken vastleggen",
       files: ["Afstemmen_Trello-Board-Planning_LimburgUnivercity.png",
-              "Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] },
+              "Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png"] },
     { label: "Afspraken nakomen",
       files: ["Trello_Done_Kolom_LimburgUnivercity.png",
               "Afstemmen_Trello-Card-Task-Detail_LimburgUnivercity.png",
               "Distributie_Feedback_Winckers_LimburgUnivercity.png",
               "Verbetervoorstel_Pagina1_LimburgUnivercity.png",
               "Verbetervoorstel_Pagina2_LimburgUnivercity.png",
-              "Verbetervoorstel_Pagina3_LimburgUnivercity.png",
-              "Documentatie_Cover_LimburgUnivercity.png"] }
+              "Verbetervoorstel_Pagina3_LimburgUnivercity.png"] }
   ],
   "B1-K2-W2": [
     { label: "Presentatie inhoud",
