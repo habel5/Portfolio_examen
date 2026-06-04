@@ -152,9 +152,9 @@ const EVIDENCE_SECTIONS = {
               "TO_Usecase1_Toelichting_deel2_LimburgUnivercity.png",
               "TO_Usecase2_Challenge_LimburgUnivercity.png"] },
     { label: "Onderbouwing",
-      files: ["TO_ActivityDiagram_ClassDiagram_LimburgUnivercity.png",
-              "TO_TechnischeSpecificaties_LimburgUnivercity.png",
-              "Onderbouwing_Beveiliging_SHA256_Supabase_LimburgUnivercity.png"] }
+      files: ["Onderbouwing_Ontwerpkeuzes_Pagina1_LimburgUnivercity.png",
+              "TO_ActivityDiagram_ClassDiagram_LimburgUnivercity.png",
+              "TO_TechnischeSpecificaties_LimburgUnivercity.png"] }
   ],
   "B1-K1-W3": [
     { label: "Gerealiseerde functionaliteit",
